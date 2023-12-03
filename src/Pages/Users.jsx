@@ -541,7 +541,9 @@ const Users = () => {
                           key={i}
                         >
                           <td>
+                          <span className="slno">
                             {(currentPage-1)*10+i+1}
+                            </span>
                           </td>
                           <td>
                             <span
