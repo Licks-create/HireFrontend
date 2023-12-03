@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
+
+
+
+
+.userDetail div.above{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 2px solid rgba(64, 59, 59, 0.187);
+}
+.userDetail div.above button{
+    flex-grow: 1;
+    cursor: pointer;
+}
+.userDetail div .search{
+    position: absolute;
+    color: rgba(7, 6, 6, 0.26);
+    top: 25%;
+    left: 5px;
+}
+.below .pages{
+    background-color: #4caf50;
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    padding: .5rem;
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: 100%;
+}
+.below .pages button{
+    margin-inline: 6px;
+    cursor: pointer;
+    padding-inline: 15px;
+    outline: none;
+    border: 2px solid transparent;
+    animation: 1s border;
+    border-radius: 5px;
+}
+.below .pages button.selected{
+    border: 2px solid rgb(231, 100, 100);
+}
+
+
+.userDetail div.below .searchFilter div{
+   display: flex;
+   width: 100%;
+   justify-content: start;
+   position: relative;
+}
+.userDetail div.below .searchFilter {
+    width: 100%;
+    padding-block: 1rem;
+    position: relative;
+    box-sizing: border-box;
+}
+.userDetail div.below .searchFilter .delMultiple{
+    width: 10%;
+    padding-block: 1rem;
+    position: absolute;
+    left: 95%;
+    color: #c0392b;
+    cursor: pointer;
+    opacity: 1;
+}
+.userDetail div.below .searchFilter input{
+    padding-left: 30px;
+    border-radius: 12px;
+    outline: none;
+    border: 2px solid rgba(7, 6, 6, 0.16);
+    padding-block: 10px;
+}
+.userDetail div.below .searchFilter div div{
+    width: 50%;
+}
+.userDetail div.below .searchFilter input::placeholder{
+    color:rgba(7, 6, 6, 0.46) ;
+}
+
+div.below section.table table{
+    
+    font-weight: 100;
+    font-size: 13px;
+    text-align: center;
+    border-collapse: collapse;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+}
+div.below section.table table thead {
+    background-color: rgba(0, 0, 0, 0.061);
+}
+div.below section.table table thead tr th{
+    padding-inline: 1rem;
+    padding-block: 1rem;
+}
+div.below section.table table tbody {
+    border: 1px solid rgba(0, 0, 0, 0.161) ;
+}
+div.below section.table table tbody tr{
+    border-bottom: 1px solid rgb(0,0,0,.3) ;
+    animation: 1.3s all;
+}
+div.below section.table table tr input[type="checkbox"]{
+    cursor: pointer;
+}
+div.below section.table table tbody tr.selected{
+   background-color: #8080808a;
+}
+table thead tr th{
+    padding-block: 1rem;
+} 
+div.below section.table table thead tr th:first-of-type{
+    border-top-left-radius: 12px;
+    display: flex;
+    justify-content: center;
+} 
+div.below section.table table thead tr th:last-of-type{
+    border-top-right-radius: 12px;
+} 
+div.below section.table table tbody tr td{
+    padding: 1rem;
+} 
+
+div.actions{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.hoverAction{
+    cursor: pointer;       
+}
+
+.hoverAction.delete{
+    flex-grow: 1;
+    padding: .5rem;
+    color: rgb(231, 100, 100);       
+    text-shadow: 1px 2px 1px rgb(231, 100, 100);
+}
+
+.hoverAction.edit{
+    flex-grow: 1;
+    padding: .5rem;
+    color:#4caf50;       
+}
+
+div.editBar{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 300;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(23, 19, 19, 0.179);
+    opacity: 0;
+    animation: 1.3s all;
+}
+
+
+#dialogBoxEdit {
+    margin: 5% auto;
+    font-weight: 700;
+    z-index: 200;
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: relative;
+}
+
+
+#dialogBoxEdit label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+
+#dialogBoxEdit input {
+    outline: none;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.511);
+}
+
+
+#dialogBoxEdit button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+   
+}
+#dialogBoxEdit select {
+    background-color: rgba(0, 0, 0, 0.061);
+    outline: none;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 1rem;   
+}
+#dialogBoxEdit .closeEdit {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 15px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+
+/* Add this to your existing CSS */
+
+div.deleteBox {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 300;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(23, 19, 19, 0.179);
+
+    }
+#dialogBoxDelete {
+    margin: 5% auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+  }
+  #dialogBoxDelete h2 {
+    color: #333;
+  }
+  
+  #dialogBoxDelete p {
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  #dialogBoxDelete button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding:5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  #dialogBoxDelete button:hover {
+    background-color: #c0392b;
+  }
+  
+@media screen and (max-width:800px) {
+   
+}
+

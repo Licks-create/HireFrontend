@@ -8,68 +8,11 @@ li{
 
 header main.home{
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    width: 100%;
+    grid-template-columns: 3fr;
     height: 95vh;
-}
-main div.left{
-    padding-block: 2rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: start;
-    border-right: 1px solid rgba(4, 4, 4, 0.219);
-}
-
-main div.left div.logo::before{
-    content: "";
-    position: absolute;
-    top: 0%;
-    width: 100%;
-    left: 0px;
-    padding: 1px;
-    background-color:rgba(4, 4, 4, 0.219) ;
-    box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.271);
-}
-main div.left div.logo{
-    font-size: 30px;
-    color: rgba(4, 4, 4, 0.219);
-    padding-block: 1rem;
+    overflow-x: hidden;
     position: relative;
-}
-main div.left div.logo::after{
-    content: "";
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    left: 0px;
-    padding: 1px;
-    background-color:rgba(4, 4, 4, 0.219) ;
-    box-shadow: 0px 0px 32px rgba(0, 0, 0, 0.271);
-}
-main div.left nav{
-    margin-block: 3rem;
-    height: 30vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-main div.left nav li{
-    width: 100%;
-    border-radius: 8px;
-    padding: .2rem ;
-    padding-left: .5rem;
-    margin: .2rem;
-    transition: .2s all;
-    font-size: 18px;
-    font-weight: 600;
-    color: rgba(64, 59, 59, 0.666);
-    cursor: pointer;
-    box-sizing: border-box;
-}
-
-main div.left nav li:hover{
-    background-color: rgba(20, 110, 236, 0.218);
-    color: rgba(27, 27, 235, 0.677);
 }
 
 li.compo.compoactive{
@@ -78,10 +21,20 @@ li.compo.compoactive{
 }
 main  div.right{
     margin-inline: 2rem;
-    padding-block:1rem ;
 }
 div.profile{
     left: 1%;
+}
+section.outlet{
+    margin-bottom: 3rem;
+}
+
+main  div.about{
+    position: absolute;
+    top: 4rem;
+    right:3rem;
+    font-weight: 700;
+    color: rgba(5, 6, 8, 0.445);    
 }
 @media screen and (min-width:1000px) {
     
