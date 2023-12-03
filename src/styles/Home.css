@@ -10,6 +10,8 @@ header main.home{
     display: grid;
     width: 100%;
     grid-template-columns: 3fr;
+    height: 95vh;
+    overflow-x: hidden;
     position: relative;
 }
 
@@ -34,9 +36,8 @@ main  div.about{
     font-weight: 700;
     color: rgba(5, 6, 8, 0.445);    
 }
-@media screen and (min-width:1000px) {
-    
-    div.profile{
-        left: 8%;
+@media screen and (max-width:1000px) {
+    header main.home{
+        overflow-x: auto;
     }
 }
