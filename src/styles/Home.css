@@ -31,10 +31,11 @@ section.outlet{
 
 main  div.about{
     position: absolute;
-    top: 4rem;
-    right:3rem;
+    top: 4.8rem;
+    right:2.5rem;
+    font-size: 10px;
     font-weight: 700;
-    color: rgba(5, 6, 8, 0.445);    
+    color: rgba(5, 6, 8, 0.181);    
 }
 @media screen and (max-width:1000px) {
     header main.home{

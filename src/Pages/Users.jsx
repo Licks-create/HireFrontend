@@ -416,6 +416,9 @@ const Users = () => {
             <table>
               <thead>
                 <tr className="selectALL">
+                  <th>
+                    SL No
+                  </th>
                   {!searchValue.length && (
                     <th>
                       <label>
@@ -464,6 +467,11 @@ const Users = () => {
                           className={data.select ? "selected" : "not-selected"}
                           key={i}
                         >
+                          <td>
+                            <span className="slno">
+                            {(currentPage-1)*10+i+1}
+                            </span>
+                          </td>
                           <td>
                             <input
                               type="checkbox"
@@ -532,6 +540,9 @@ const Users = () => {
                           className={data.select ? "selected" : "not-selected"}
                           key={i}
                         >
+                          <td>
+                            {(currentPage-1)*10+i+1}
+                          </td>
                           <td>
                             <span
                               style={{

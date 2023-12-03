@@ -137,6 +137,11 @@ div.below section.table table tbody tr td{
     padding: 1rem;
 } 
 
+tr span.slno{
+    color: #0c0808;
+    font-weight: 300;
+}
+
 div.actions{
     display: flex;
     justify-content: space-evenly;
