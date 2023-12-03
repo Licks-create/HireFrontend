@@ -4,7 +4,6 @@ import { Outlet, Link } from "react-router-dom";
 import "../styles/Home.css";
 import { useEffect } from "react";
 const Home = () => {
-
   return (
     <header className="header">
       <main className="home">
@@ -15,7 +14,10 @@ const Home = () => {
           </section>
         </div>
         <div className="about">
-         <Link  to="https://funny-truffle-75736f.netlify.app/" target="_blank"> About The Developer </Link>
+          <Link to="https://funny-truffle-75736f.netlify.app/" target="_blank">
+            {" "}
+            About The Developer{" "}
+          </Link>
         </div>
       </main>
     </header>

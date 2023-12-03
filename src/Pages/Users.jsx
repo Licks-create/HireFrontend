@@ -37,36 +37,35 @@ const Users = () => {
     const fetchData = async () => {
       setLoader(true);
       try {
-        
-      const res = await fetch(
-        "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"
-      );
-      const data = await res.json();
-
-      setLoader(false);
-      if (data) {
-        setLocalData(
-          data.map((ele, i) => ({
-            ...ele,
-            select: false,
-          }))
+        const res = await fetch(
+          "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"
         );
-        // setting total page based on data length
-        settotalPage((pre) => {
-          pre.length = Math.ceil(data.length / 10);
-          return [...pre];
-        });
+        const data = await res.json();
 
-        setCurrentPageData(
-          data.slice(0, 10).map((ele, i) => ({
-            ...ele,
-            select: false,
-          }))
-        );
-      }
-      toast.success("data fetched")
+        setLoader(false);
+        if (data) {
+          setLocalData(
+            data.map((ele, i) => ({
+              ...ele,
+              select: false,
+            }))
+          );
+          // setting total page based on data length
+          settotalPage((pre) => {
+            pre.length = Math.ceil(data.length / 10);
+            return [...pre];
+          });
+
+          setCurrentPageData(
+            data.slice(0, 10).map((ele, i) => ({
+              ...ele,
+              select: false,
+            }))
+          );
+        }
+        toast.success("data fetched");
       } catch (error) {
-        toast.error("could not fetch")
+        toast.error("could not fetch");
       }
     };
     fetchData();
@@ -149,13 +148,13 @@ const Users = () => {
 
   const deleteOne = (id) => {
     setDeleteShow(true);
-    let obj={}
+    let obj = {};
     let dataAfterDeletion = currentPageData.filter((ele, i) => {
       if (ele.id !== id) {
         return true;
-      } else{
-        obj=ele
-        return false
+      } else {
+        obj = ele;
+        return false;
       }
     });
     setCurrentPageData(dataAfterDeletion);
@@ -172,7 +171,7 @@ const Users = () => {
     });
     setLocalData(localDataAfterDeletion);
     setSearchedData(deleteInSeach);
-    toast.success(`details of user ${obj.name} deleted`)
+    toast.success(`details of user ${obj.name} deleted`);
   };
   const removeButtonStyling = () => {
     document.querySelectorAll(".below .pages button").forEach((e) => {
@@ -236,7 +235,7 @@ const Users = () => {
           };
       })
     );
-    toast.success(`Submission Succesfull`)
+    toast.success(`Submission Succesfull`);
     setEditShow(false);
   };
 
@@ -251,11 +250,12 @@ const Users = () => {
       return ele.select;
     });
     setMultiSelect(multiSel.length > 1 ? true : false);
-    setRowsSelected(localData.filter((ele) => {
-      return ele.select;
-    }).length)
+    setRowsSelected(
+      localData.filter((ele) => {
+        return ele.select;
+      }).length
+    );
   }, [currentPageData]);
-
 
   const handleClose = () => {
     setEditShow(false);
@@ -287,12 +287,11 @@ const Users = () => {
       return true;
     });
     setLocalData(localDataAfterDeletion);
-    toast.success(`${10-dataAfterDeletion.length} rows deleted`)
+    toast.success(`${10 - dataAfterDeletion.length} rows deleted`);
   };
   return (
     <main className="userDetail">
       <div className="above"></div>
-
 
       <div
         className="editBar"
@@ -353,7 +352,9 @@ const Users = () => {
             <h1>Delete Alert</h1>
             <h4>Are you sure you want to delete?</h4>
             {!multiSelect && (
-              <button onClick={() => deleteOne(deleteShow?.id)}>Yes, Delete</button>
+              <button onClick={() => deleteOne(deleteShow?.id)}>
+                Yes, Delete
+              </button>
             )}
             {multiSelect && (
               <button onClick={() => delMultiple(deleteShow?.id)}>
@@ -364,8 +365,6 @@ const Users = () => {
           </div>
         )}
       </div>
-
-   
 
       {loader ? (
         <h3>Please wait ...</h3>
@@ -397,7 +396,7 @@ const Users = () => {
             </div>
           </section>
           <div className="pages">
-            <span >Page No</span>
+            <span>Page No</span>
             {totalPage?.map((ele, i) => {
               return (
                 <button
@@ -410,15 +409,15 @@ const Users = () => {
                 </button>
               );
             })}
-            <span id="rowSelected">{rowSelected} selected from {localData.length} row(s)</span>
+            <span id="rowSelected">
+              {rowSelected} selected from {localData.length} row(s)
+            </span>
           </div>
           <section className="table">
             <table>
               <thead>
                 <tr className="selectALL">
-                  <th>
-                    SL No
-                  </th>
+                  <th>SL No</th>
                   {!searchValue.length && (
                     <th>
                       <label>
@@ -469,7 +468,7 @@ const Users = () => {
                         >
                           <td>
                             <span className="slno">
-                            {(currentPage-1)*10+i+1}
+                              {(currentPage - 1) * 10 + i + 1}
                             </span>
                           </td>
                           <td>
@@ -541,8 +540,8 @@ const Users = () => {
                           key={i}
                         >
                           <td>
-                          <span className="slno">
-                            {(currentPage-1)*10+i+1}
+                            <span className="slno">
+                              {(currentPage - 1) * 10 + i + 1}
                             </span>
                           </td>
                           <td>
