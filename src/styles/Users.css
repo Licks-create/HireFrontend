@@ -53,7 +53,11 @@
     color: #333333ed;
     font-size: 10px;
 }
-  
+.below .pages span{
+    color: rgb(237, 235, 235);
+    font-weight: 500;
+    margin-inline: 1rem;
+}
 
 .userDetail div.below .searchFilter div{
    display: flex;

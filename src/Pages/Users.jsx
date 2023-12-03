@@ -397,6 +397,7 @@ const Users = () => {
             </div>
           </section>
           <div className="pages">
+            <span >Page No</span>
             {totalPage?.map((ele, i) => {
               return (
                 <button
