@@ -91,7 +91,6 @@
 }
 
 div.below section.table table{
-    
     font-weight: 100;
     font-size: 13px;
     text-align: center;
@@ -171,7 +170,7 @@ div.editBar{
 
 
 #dialogBoxEdit {
-    margin: 5% auto;
+    margin: 2% auto;
     font-weight: 700;
     z-index: 200;
     width: 300px;

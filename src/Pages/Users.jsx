@@ -149,10 +149,14 @@ const Users = () => {
 
   const deleteOne = (id) => {
     setDeleteShow(true);
+    let obj={}
     let dataAfterDeletion = currentPageData.filter((ele, i) => {
       if (ele.id !== id) {
         return true;
-      } else return false;
+      } else{
+        obj=ele
+        return false
+      }
     });
     setCurrentPageData(dataAfterDeletion);
 
@@ -168,6 +172,7 @@ const Users = () => {
     });
     setLocalData(localDataAfterDeletion);
     setSearchedData(deleteInSeach);
+    toast.success(`details of user ${obj.name} deleted`)
   };
   const removeButtonStyling = () => {
     document.querySelectorAll(".below .pages button").forEach((e) => {
@@ -346,16 +351,16 @@ const Users = () => {
         {deleteShow?.toDelete && (
           <div id="dialogBoxDelete">
             <h1>Delete Alert</h1>
-            <h4>Are you sure oyu want to delete?</h4>
+            <h4>Are you sure you want to delete?</h4>
             {!multiSelect && (
-              <button onClick={() => deleteOne(deleteShow?.id)}>Yes</button>
+              <button onClick={() => deleteOne(deleteShow?.id)}>Yes, Delete</button>
             )}
             {multiSelect && (
               <button onClick={() => delMultiple(deleteShow?.id)}>
                 Delete All
               </button>
             )}
-            <button onClick={() => setDeleteShow(false)}>No</button>
+            <button onClick={() => setDeleteShow(false)}>No, Wait</button>
           </div>
         )}
       </div>
