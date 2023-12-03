@@ -31,6 +31,7 @@ const Users = () => {
   const [searchValue, setSearchValue] = useState("");
   const [searchedData, setSearchedData] = useState([]);
   const [multiSelect, setMultiSelect] = useState(false);
+  const [rowSelected, setRowsSelected] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -245,7 +246,9 @@ const Users = () => {
       return ele.select;
     });
     setMultiSelect(multiSel.length > 1 ? true : false);
-    multiSel.length>0 && toast.success(`${multiSel.length} rows selected`)
+    setRowsSelected(localData.filter((ele) => {
+      return ele.select;
+    }).length)
   }, [currentPageData]);
 
 
@@ -401,6 +404,7 @@ const Users = () => {
                 </button>
               );
             })}
+            <span id="rowSelected">{rowSelected} selected from {localData.length} row(s)</span>
           </div>
           <section className="table">
             <table>

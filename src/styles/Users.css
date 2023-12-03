@@ -30,6 +30,7 @@
     border-radius: 10px;
     box-sizing: border-box;
     width: 100%;
+    position: relative;
 }
 .below .pages button{
     margin-inline: 6px;
@@ -43,7 +44,16 @@
 .below .pages button.selected{
     border: 2px solid rgb(231, 100, 100);
 }
-
+#rowSelected{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    color: #333333ed;
+    font-size: 10px;
+}
+  
 
 .userDetail div.below .searchFilter div{
    display: flex;
@@ -224,9 +234,6 @@ div.editBar{
     right: 10px;
 }
 
-
-/* Add this to your existing CSS */
-
 div.deleteBox {
     width: 100vw;
     height: 100vh;
@@ -268,7 +275,8 @@ div.deleteBox {
   #dialogBoxDelete button:hover {
     background-color: #c0392b;
   }
-  
+
+
 @media screen and (max-width:800px) {
    
 }
