@@ -8,6 +8,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
 
 import "../styles/Users.css";
+import toast from "react-hot-toast";
 
 const Users = () => {
   const [editShow, setEditShow] = useState(false);
@@ -34,6 +35,8 @@ const Users = () => {
   useEffect(() => {
     const fetchData = async () => {
       setLoader(true);
+      try {
+        
       const res = await fetch(
         "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"
       );
@@ -59,6 +62,10 @@ const Users = () => {
             select: false,
           }))
         );
+      }
+      toast.success("data fetched")
+      } catch (error) {
+        toast.error("could not fetch")
       }
     };
     fetchData();
@@ -223,7 +230,7 @@ const Users = () => {
           };
       })
     );
-
+    toast.success(`Submission Succesfull`)
     setEditShow(false);
   };
 
@@ -238,7 +245,9 @@ const Users = () => {
       return ele.select;
     });
     setMultiSelect(multiSel.length > 1 ? true : false);
+    multiSel.length>0 && toast.success(`${multiSel.length} rows selected`)
   }, [currentPageData]);
+
 
   const handleClose = () => {
     setEditShow(false);
@@ -267,10 +276,10 @@ const Users = () => {
     let localDataAfterDeletion = localData.filter((ele, i) => {
       if (i >= (currentPage - 1) * 10 && i < (currentPage - 1) * 10 + 10)
         return !ele.select;
-
       return true;
     });
     setLocalData(localDataAfterDeletion);
+    toast.success(`${10-dataAfterDeletion.length} rows deleted`)
   };
   return (
     <main className="userDetail">
