@@ -10,8 +10,6 @@ header main.home{
     display: grid;
     width: 100%;
     grid-template-columns: 3fr;
-    height: 95vh;
-    overflow-x: hidden;
     position: relative;
 }
 
